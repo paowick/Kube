@@ -118,9 +118,9 @@ to your host file on your computer
 
 ## Result
 
-Use **http://127.0.0.1:2287/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/** for cluster dashboard
+Use **http://127.0.0.1:2287/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/** for cluster dashboard \
 <img src="./src/result_cluster_dashboard.jpg" width="640" height="350"> \
-Use **https://traefik.spcn23.local/dashboard/** for traefik dashboard
+Use **https://traefik.spcn23.local/dashboard/** for traefik dashboard \
 <img src="./src/result_traefik.jpg" width="640" height="350"> \
-Use **http://web.spcn23.local/** for cancher web
+Use **http://web.spcn23.local/** for cancher web \
 <img src="./src/result_rancher.jpg" width="640" height="350"> 
