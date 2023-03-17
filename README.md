@@ -1,4 +1,4 @@
-# Kube
+# Kubernetes
 
 ## Wakatime
 ***Url*** -> https://wakatime.com/@spcn23/projects/wrufjrnlpt
