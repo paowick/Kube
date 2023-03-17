@@ -1,9 +1,12 @@
 # Kube
 
-## Install kubectl and minikube
+## Wakatime
+***Url*** -> https://wakatime.com/@spcn23/projects/wrufjrnlpt
+## Step
+### 1. Install kubectl and minikube
 
 1. install kubectl 
-    use **curl** to insatll
+    Use **curl** to insatll
    ``` 
    curl.exe -LO "https://dl.k8s.io/release/v1.26.0/bin/windows/amd64/kubectl.exe"
    ```
@@ -15,14 +18,14 @@
     <img src="./src/test_kubectl.jpg" width="662" height="66"> 
 
 
-2. insatll minikube
+2. Insatll minikube
     Download and run the install
     ```
     New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
     Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
     ```
     <img src="./src/minikube_install.jpg" width="667" height="146"> \
-    Add the minikube.exe binary to your PATH (must be run as Administrator)
+    Add the minikube.exe binary to your PATH
     ```
     $oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
     if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
@@ -31,7 +34,9 @@
     ```
 
 
-    <img src="./src/minikube_add_path.jpg" width="642" height="60"> 
+    <img src="./src/minikube_add_path.jpg" width="642" height="60"> \
+    >**_NOTE:_**
+    Must run as Administrator 
 
 
     Test command
@@ -48,8 +53,7 @@
     ```
 
     <img src="./src/minikube_start.jpg"> 
-
-## Install traefik
+### 2. Install traefik
 1. Install Traefik Resource Definitions
     ```
     kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
@@ -57,7 +61,7 @@
     <img src="./src/install_traefik_RD.jpg" width="621" height="134"> 
 
     
-2. Install RBAC for Traefik
+1. Install RBAC for Traefik
    ```
    kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
    ```
@@ -65,6 +69,7 @@
 
 
 3. Install Traefik Helmchart
+   >**_NOTE:_**
     Must be install **[helm](https://get.helm.sh/helm-v3.11.2-windows-amd64.zip)** and add the helm.exe binary to your **PATH ENVIRONMENT**
     ```
     helm repo add traefik https://traefik.github.io/charts 
@@ -82,7 +87,7 @@
     <img src="./src/verify_traefik.jpg"> 
 
 
-##  create secrete
+### 3. Create secrete
 ```
 htpasswd -nB user | tee auth-secret
 # New password:
@@ -92,7 +97,7 @@ htpasswd -nB user | tee auth-secret
 <img src="./src/password.jpg"> 
 
 
-## Dry run to create a secret deployment.
+### 4. Dry run to create a secret deployment.
 ```
 kubectl create secret generic -n traefik dashboard-auth-secret --from-file=users=auth-secret -o yaml --dry-run=client | tee dashboard-secret.yaml
 ```
@@ -104,7 +109,7 @@ Copy users secret from dashboard-secret.yaml and replace in traefik-dashboard.ya
 you must run **```minikube dashboard ```** for get cluster dashboard
 and **```minikube tunnel```** for rounte to services
 
-## Deploy
+### 5. Deploy
 ```
 kubectl apply -f . 
 ```
