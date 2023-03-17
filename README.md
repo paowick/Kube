@@ -1,20 +1,19 @@
 # Kubernetes
-## Requirement
-- **Computer**
-  - 2 CPUs or more
-  - 2GB of free memory
-  - 20GB of free disk space
-  - Internet connection
-  - Container or virtual machine manager, such as: 
-    * Docker
-    * QEMU
-    * Hyperkit
-    * Hyper-V
-    * KVM
-    * Parallels
-    * Podman
-    * VirtualBox
-    * VMware Fusion/Workstation
+## Requiremen
+- 2 CPUs or more
+- 2GB of free memory
+- 20GB of free disk space
+- Internet connection
+- Container or virtual machine manager, such as: 
+  * Docker
+  * QEMU
+  * Hyperkit
+  * Hyper-V
+  * KVM
+  * Parallels
+  * Podman
+  * VirtualBox
+  * VMware Fusion/Workstation
 ## Wakatime
 ***Url*** -> https://wakatime.com/@spcn23/projects/wrufjrnlpt
 ## Step
