@@ -1,5 +1,20 @@
 # Kubernetes
-
+## Requirement
+- **Computer**
+  - 2 CPUs or more
+  - 2GB of free memory
+  - 20GB of free disk space
+  - Internet connection
+  - Container or virtual machine manager, such as: 
+    * Docker
+    * QEMU
+    * Hyperkit
+    * Hyper-V
+    * KVM
+    * Parallels
+    * Podman
+    * VirtualBox
+    * VMware Fusion/Workstation
 ## Wakatime
 ***Url*** -> https://wakatime.com/@spcn23/projects/wrufjrnlpt
 ## Step
@@ -35,7 +50,7 @@
 
 
     <img src="./src/minikube_add_path.jpg" width="642" height="60"> \
-    >**_NOTE:_**
+    >:warning:**_WARNING:_**
     Must run as Administrator 
 
 
@@ -53,6 +68,14 @@
     ```
 
     <img src="./src/minikube_start.jpg"> 
+
+
+    >:memo:**_NOTE:_**
+    You can user another driver to run minikube such as: Hyper-V,VirtualBox,VMware or anything else
+    *Usage:* ```minikube start --driver=<driver>```
+    Or make as the default driver: ```minikube config set driver <driver>```
+    
+
 ### 2. Install traefik
 1. #### Install Traefik Resource Definitions
     ```
@@ -69,7 +92,7 @@
 
 
 3. #### Install Traefik Helmchart
-   >:warning:**_NOTE:_**
+   >:warning:**_WARNING:_**
     Must be install **[helm](https://get.helm.sh/helm-v3.11.2-windows-amd64.zip)** and add the helm.exe binary to your **PATH ENVIRONMENT**
     or following the step here **[click](https://helm.sh/docs/intro/install/)**
     ```
@@ -106,7 +129,7 @@ kubectl create secret generic -n traefik dashboard-auth-secret --from-file=users
 This will automatic create a deployment file dashboard-secret.yaml
 Copy users secret from dashboard-secret.yaml and replace in traefik-dashboard.yaml
 
->:warning:**_NOTE:_** 
+>:warning:**_WARNING:_** 
 you must run **```minikube dashboard```** for get cluster dashboard
 and **```minikube tunnel```** for route to services
 
@@ -116,7 +139,7 @@ kubectl apply -f .
 ```
 <img src="./src/deploy.jpg" width="599" height="143"> 
 
->:warning:**_NOTE:_**
+>:warning:**_WARNING:_**
 If you following this step, you must add
 **127.0.0.1 traefik.spcn23.local web.spcn23.local**
 to your host file on your computer
