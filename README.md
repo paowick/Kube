@@ -5,7 +5,7 @@
 ## Step
 ### 1. Install kubectl and minikube
 
-1. install kubectl 
+1. #### install kubectl 
     Use **curl** to insatll
    ``` 
    curl.exe -LO "https://dl.k8s.io/release/v1.26.0/bin/windows/amd64/kubectl.exe"
@@ -18,7 +18,7 @@
     <img src="./src/test_kubectl.jpg" width="662" height="66"> 
 
 
-2. Insatll minikube
+2. #### Insatll minikube
     Download and run the install
     ```
     New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
@@ -47,28 +47,28 @@
     <img src="./src/minikube_test.jpg"> 
 
 
-    #### Start minikube
+3. #### Start minikube
     ```
     minikube start
     ```
 
     <img src="./src/minikube_start.jpg"> 
 ### 2. Install traefik
-1. Install Traefik Resource Definitions
+1. #### Install Traefik Resource Definitions
     ```
     kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
     ```
     <img src="./src/install_traefik_RD.jpg" width="621" height="134"> 
 
     
-1. Install RBAC for Traefik
+1. #### Install RBAC for Traefik
    ```
    kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
    ```
     <img src="./src/install_traefik_RBAC.jpg" width="619" height="52"> 
 
 
-3. Install Traefik Helmchart
+3. #### Install Traefik Helmchart
    >**_NOTE:_**
     Must be install **[helm](https://get.helm.sh/helm-v3.11.2-windows-amd64.zip)** and add the helm.exe binary to your **PATH ENVIRONMENT**
     ```
@@ -79,7 +79,7 @@
     <img src="./src/helm.jpg"> 
 
 
-4. Verify service is running
+4. #### Verify service is running
     ```
     kubectl get svc -l app.kubernetes.io/name=traefik
     kubectl get po -l app.kubernetes.io/name=traefik
@@ -106,8 +106,8 @@ This will automatic create a deployment file dashboard-secret.yaml
 Copy users secret from dashboard-secret.yaml and replace in traefik-dashboard.yaml
 
 >**_NOTE:_** 
-you must run **```minikube dashboard ```** for get cluster dashboard
-and **```minikube tunnel```** for rounte to services
+you must run **```minikube dashboard```** for get cluster dashboard
+and **```minikube tunnel```** for route to services
 
 ### 5. Deploy
 ```
