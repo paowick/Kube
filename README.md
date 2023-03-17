@@ -49,7 +49,9 @@
     ```
 
 
-    <img src="./src/minikube_add_path.jpg" width="642" height="60"> 
+    <img src="./src/minikube_add_path.jpg" width="642" height="60">
+
+
     >:warning:**_WARNING:_**
     Must run as Administrator 
 
