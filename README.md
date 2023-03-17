@@ -69,8 +69,9 @@
 
 
 3. #### Install Traefik Helmchart
-   >**_NOTE:_**
+   >:warning:**_NOTE:_**
     Must be install **[helm](https://get.helm.sh/helm-v3.11.2-windows-amd64.zip)** and add the helm.exe binary to your **PATH ENVIRONMENT**
+    or following the step here **[click](https://helm.sh/docs/intro/install/)**
     ```
     helm repo add traefik https://traefik.github.io/charts 
     helm repo update 
@@ -105,7 +106,7 @@ kubectl create secret generic -n traefik dashboard-auth-secret --from-file=users
 This will automatic create a deployment file dashboard-secret.yaml
 Copy users secret from dashboard-secret.yaml and replace in traefik-dashboard.yaml
 
->**_NOTE:_** 
+>:warning:**_NOTE:_** 
 you must run **```minikube dashboard```** for get cluster dashboard
 and **```minikube tunnel```** for route to services
 
@@ -115,13 +116,13 @@ kubectl apply -f .
 ```
 <img src="./src/deploy.jpg" width="599" height="143"> 
 
->**_NOTE:_**
+>:warning:**_NOTE:_**
 If you following this step, you must add
 **127.0.0.1 traefik.spcn23.local web.spcn23.local**
 to your host file on your computer
 
 
-## Result
+## Result 
 
 Use **http://127.0.0.1:2287/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/** for cluster dashboard \
 <img src="./src/result_cluster_dashboard.jpg" width="640" height="350"> \
