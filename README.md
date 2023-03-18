@@ -130,6 +130,8 @@ kubectl create secret generic -n traefik dashboard-auth-secret --from-file=users
 This will automatic create a deployment file dashboard-secret.yaml
 Copy users secret from dashboard-secret.yaml and replace in traefik-dashboard.yaml
 
+<img src="./src/dashboard-secret.yaml%20-%20Kube%20-%20Visual%20Studio%20Code%202023-03-18%2012-51-59.gif" width="640" height="350">
+
 >:warning:**_WARNING:_** 
 you must run **```minikube dashboard```** for get cluster dashboard
 and **```minikube tunnel```** for route to services
